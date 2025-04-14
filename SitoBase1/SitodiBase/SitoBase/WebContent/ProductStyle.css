@@ -1,0 +1,185 @@
+@CHARSET "UTF-8";
+
+html {
+	width: 80%;
+	margin: 10px auto;
+	background-color: #f5f5f5; /* sfondo chiaro neutro */
+	color: #000000; /* testo principale nero */
+	font-family: Arial, sans-serif;
+}
+
+h2 {
+	text-align: center;
+	color: #000080; /* blu scuro */
+}
+
+a:link,
+a:visited {
+	color: #000080;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #B50C00; /* rosso scuro */
+}
+
+a:active {
+	color: #545454; /* grigio scuro */
+}
+
+table {
+	width: 80%;
+	max-width: 1000px;
+	margin: 20px auto;
+	border-collapse: collapse;
+	text-align: center;
+	font-size: 1.1em;
+	background-color: #ffffff; /* sfondo bianco per leggibilità */
+	color: #000000;
+	box-shadow: 0 0 10px #87878722;
+	border: 1px solid #878787;
+}
+
+/* Intestazione tabella */
+th {
+	background-color: #000080;
+	color: #D18171;
+	padding: 12px;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+/* Celle */
+td {
+	border: 1px solid #878787;
+	padding: 10px;
+}
+
+/* Righe alternate */
+tr:nth-child(even) {
+	background-color: #f0f0f0;
+}
+
+/* Nessuna auto disponibile */
+td[colspan] {
+	font-style: italic;
+	color: #545454;
+}
+
+/* Etichette form */
+label {
+	font-weight: bold;
+	color: #545454;
+	display: inline-block;
+	margin-top: 10px;
+}
+
+/* Form base */
+form {
+	width: 600px;
+	margin: 30px auto;
+	text-align: left;
+	background-color: #ffffff;
+	border: 2px solid #878787;
+	padding: 20px;
+	padding-right: 40px; 
+	border-radius: 8px;
+	box-shadow: 0 0 8px #87878722;
+}
+
+form input[type=text],
+form input[type=number],
+form input[type=password],
+form input[type=date],
+form input[type=range],
+form input[type=email],
+form input[type=url],
+form input[type=time],
+form input[list],
+select {
+	width: 100%;
+	font-size: 1em;
+	padding: 8px;
+	margin-top: 5px;
+	border: 1px solid #878787;
+	border-radius: 4px;
+	color: #000000;
+	background-color: #ffffff;
+}
+
+textarea {
+	width: 100%;
+	height: 60px;
+	font-size: 1em;
+	padding: 8px;
+	border: 1px solid #878787;
+	border-radius: 4px;
+	color: #000000;
+	background-color: #ffffff;
+	margin-top: 5px;
+}
+
+/* Pulsanti */
+input[type=submit],
+input[type=reset] {
+	margin-top: 15px;
+	padding: 10px 20px;
+	font-weight: bold;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+input[type=submit] {
+	background-color: #000080;
+	color: #ffffff;
+}
+
+input[type=submit]:hover {
+	background-color: #545454;
+}
+
+input[type=reset] {
+	background-color: #B50C00;
+	color: #ffffff;
+}
+
+input[type=reset]:hover {
+	background-color: #D18171;
+}
+a {
+  color: #0044cc;           /* Colore blu visibile */
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #ff6600;           /* Arancione al passaggio del mouse */
+  text-decoration: none;
+}
+a.ordina-link {
+  color: white;
+  padding: 4px 8px;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+a.ordina-link:hover {
+  background-color: #003399;
+}
+.dettagli-auto {
+  width: 100%;
+  table-layout: auto;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.dettagli-auto th, .dettagli-auto td {
+  padding: 8px 12px;
+  text-align: center;
+  border: 1px solid #ccc;
+  min-width: 100px; /* Puoi regolarlo in base al contenuto */
+  word-wrap: break-word;
+}
