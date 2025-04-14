@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Context PUBLIC "-//Apache Tomcat//DTD Context 1.0//EN" "http://tomcat.apache.org/dtd/context_1_0.dtd">
+<Context>
+    <Resource name="jdbc/catalogo_auto"
+        auth="Container"
+        driverClassName="com.mysql.cj.jdbc.Driver"
+        type="javax.sql.DataSource"
+        username="root"
+        password="root"
+        url="jdbc:mysql://localhost:3306/catalogo_auto?useUnicode=true&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC&amp;useSSL=false&amp;verifyServerCertificate=false"/>
+</Context>
