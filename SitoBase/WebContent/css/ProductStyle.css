@@ -1,0 +1,245 @@
+/* Impostazioni globali */
+html, body {
+    height: 100%; /* Imposta l'altezza della pagina al 100% */
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #000000;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column; /* Allinea gli elementi in verticale */
+}
+
+/* Contenitore principale */
+main {
+    flex-grow: 1; /* Permette al contenuto principale di occupare lo spazio disponibile */
+}
+
+/* Header a tutta larghezza */
+header {
+    width: 100%;
+    background-color: #000080;
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+header h1, header a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Titolo pagina */
+h2 {
+    text-align: center;
+    color: #000080;
+}
+
+/* Link */
+a:link,
+a:visited {
+    color: #000080;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #B50C00;
+}
+
+a:active {
+    color: #545454;
+}
+
+/* Tabelle */
+table {
+    width: 100%;
+    max-width: 1000px;
+    margin: 20px auto;
+    border-collapse: collapse;
+    text-align: center;
+    font-size: 1.1em;
+    background-color: #ffffff;
+    color: #000000;
+    box-shadow: 0 0 10px #87878722;
+    border: 1px solid #878787;
+}
+
+th {
+    background-color: #000080;
+    color: #D18171;
+    padding: 12px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+td {
+    border: 1px solid #878787;
+    padding: 10px;
+}
+
+tr:nth-child(even) {
+    background-color: #f0f0f0;
+}
+
+td[colspan] {
+    font-style: italic;
+    color: #545454;
+}
+
+/* Form e input */
+label {
+    font-weight: bold;
+    color: #545454;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+form {
+    width: 600px;
+    margin: 30px auto;
+    text-align: left;
+    background-color: #ffffff;
+    border: 2px solid #878787;
+    padding: 20px 40px 20px 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 8px #87878722;
+}
+
+form input[type=text],
+form input[type=number],
+form input[type=password],
+form input[type=date],
+form input[type=range],
+form input[type=email],
+form input[type=url],
+form input[type=time],
+form input[list],
+select {
+    width: 100%;
+    font-size: 1em;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #878787;
+    border-radius: 4px;
+    color: #000000;
+    background-color: #ffffff;
+}
+
+textarea {
+    width: 100%;
+    height: 60px;
+    font-size: 1em;
+    padding: 8px;
+    border: 1px solid #878787;
+    border-radius: 4px;
+    color: #000000;
+    background-color: #ffffff;
+    margin-top: 5px;
+}
+
+/* Pulsanti */
+input[type=submit],
+input[type=reset] {
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type=submit] {
+    background-color: #000080;
+    color: #ffffff;
+}
+
+input[type=submit]:hover {
+    background-color: #545454;
+}
+
+input[type=reset] {
+    background-color: #B50C00;
+    color: #ffffff;
+}
+
+input[type=reset]:hover {
+    background-color: #D18171;
+}
+
+/* Link aggiuntivi */
+a {
+    color: #0044cc;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #ff6600;
+    text-decoration: none;
+}
+
+a.ordina-link {
+    color: white;
+    padding: 4px 8px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.9em;
+    background-color: #000080;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+a.ordina-link:hover {
+    background-color: #003399;
+}
+
+div.ordina-link-container {
+    text-align: center;
+}
+
+/* Tabella dettagli auto */
+.dettagli-auto {
+    width: 100%;
+    table-layout: auto;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.dettagli-auto th,
+.dettagli-auto td {
+    padding: 8px 12px;
+    text-align: center;
+    border: 1px solid #ccc;
+    min-width: 100px;
+    word-wrap: break-word;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+form.carrello-form {
+    width: auto; /* Form di dimensioni più piccole */
+    margin: 0; /* Rimuove la spaziatura in eccesso */
+    padding: 0; /* Rimuove il padding di default */
+    display: inline-block; /* Mantiene il form allineato con il contenuto */
+}
+
+form.carrello-form input[type="submit"] {
+    padding: 6px 12px; /* Più piccolo */
+    font-size: 14px; /* Font più piccolo */
+    width: auto; /* Permette al bottone di adattarsi al contenuto */
+    margin: 0; /* Rimuove il margine sopra e sotto il pulsante */
+    display: inline-block; /* Assicura che il pulsante si comporti come elemento inline */
+}
+footer {
+    background-color: #000080;
+    color: white;
+    text-align: center;
+    padding: 20px 10px;
+    margin-top: 40px;
+    flex-shrink: 0;
+}
