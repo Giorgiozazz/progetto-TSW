@@ -16,6 +16,7 @@
 
 <body>
     <%@ include file="/jsp/common/header.jsp" %>
+<main>
     <h2><b>IL TUO CARRELLO</b></h2>
     
     <table class="dettagli-auto">
@@ -66,6 +67,7 @@
 	<div class="ordina-link-container">
     <a href="<%= request.getContextPath() %>/index.jsp" class="ordina-link">Torna al Catalogo</a>
     </div>
+</main>
     <%@ include file="/jsp/common/footer.jsp" %>
 </body>
 </html>
