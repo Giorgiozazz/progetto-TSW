@@ -206,19 +206,28 @@ public class ProductModelDM implements ProductModel {
         return automobiles;
     }
     
-    public synchronized void updateProduct(ProductBean product) throws SQLException {
+public synchronized void updateProduct(ProductBean product) throws SQLException {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
+
+        boolean hasImage = product.getImmagine() != null && !product.getImmagine().isEmpty();
 
         String updateSQL = "UPDATE " + TABLE_NAME + " SET " +
                 "MARCA = ?, MODELLO = ?, TARGA = ?, PREZZO = ?, ANNO = ?, KILOMETRI = ?, TIPO_CARBURANTE = ?, " +
                 "PORTE = ?, TIPO = ?, CLIMATIZZATORE = ?, RUOTEMOTRICI = ?, SCHERMO_INTEGRATO = ?, CILINDRATA = ?, " +
                 "POSTI = ?, TIPO_CAMBIO = ?, RAPPORTI = ?, POTENZAELETTRICA = ?, TRAZIONE = ?, PESO = ?, COLORE = ?, " +
-                "POTENZA = ?, IMAGEPATH = ?, CF = ? WHERE VIN = ?";
+                "POTENZA = ?, CF = ?";
+
+        if (hasImage) {
+            updateSQL += ", IMAGEPATH = ?";
+        }
+
+        updateSQL += " WHERE VIN = ?";
 
         try {
             connection = DriverManagerConnectionPool.getConnection();
             preparedStatement = connection.prepareStatement(updateSQL);
+
             preparedStatement.setString(1, product.getMarca());
             preparedStatement.setString(2, product.getModello());
             preparedStatement.setString(3, product.getTarga());
@@ -240,11 +249,18 @@ public class ProductModelDM implements ProductModel {
             preparedStatement.setInt(19, product.getPeso());
             preparedStatement.setString(20, product.getColore());
             preparedStatement.setInt(21, product.getPotenza());
-            preparedStatement.setString(22, product.getImmagine());
-            preparedStatement.setString(23, product.getCf());
-            preparedStatement.setString(24, product.getVin());  // VIN è la chiave primaria
+            preparedStatement.setString(22, product.getCf());
 
-            preparedStatement.executeUpdate();
+            int index = 23;
+            if (hasImage) {
+                preparedStatement.setString(index++, product.getImmagine());
+            }
+
+            preparedStatement.setString(index, product.getVin());
+
+            int rows = preparedStatement.executeUpdate();
+            System.out.println("Righe aggiornate: " + rows);
+
         } finally {
             try {
                 if (preparedStatement != null) preparedStatement.close();
