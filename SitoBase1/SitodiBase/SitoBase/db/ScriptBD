@@ -1,0 +1,66 @@
+-- Creazione del database
+CREATE DATABASE IF NOT EXISTS catalogo_auto;
+USE catalogo_auto;
+
+-- Creazione della tabella automobili
+CREATE TABLE IF NOT EXISTS automobili (
+    VIN VARCHAR(17) PRIMARY KEY,  
+    MARCA VARCHAR(50) NOT NULL,
+    MODELLO VARCHAR(50) NOT NULL,
+    TARGA VARCHAR(10) UNIQUE NOT NULL,
+    PREZZO DECIMAL(10,2) NOT NULL,
+    ANNO INT NOT NULL,
+    KILOMETRI INT NOT NULL,  
+    TIPO_CARBURANTE ENUM('Benzina', 'Diesel', 'GPL', 'Metano', 'Elettrico', 'Ibrido') NOT NULL,
+    PORTE INT NOT NULL,
+    TIPO VARCHAR(30) NOT NULL,
+    CLIMATIZZATORE BOOLEAN NOT NULL DEFAULT FALSE,
+    RUOTEMOTRICI ENUM('Anteriore', 'Posteriore', 'Integrale') NOT NULL,  
+    SCHERMO_INTEGRATO BOOLEAN NOT NULL DEFAULT FALSE,
+    CILINDRATA INT NOT NULL DEFAULT 0,  
+    POSTI INT NOT NULL,
+    TIPO_CAMBIO ENUM('Manuale', 'Automatico') NOT NULL,
+    RAPPORTI INT NOT NULL,
+    POTENZAELETTRICA INT DEFAULT 0, 
+    TRAZIONE ENUM('Anteriore', 'Posteriore', 'Integrale') NOT NULL,
+    PESO INT NOT NULL,
+    COLORE VARCHAR(20) NOT NULL,
+    POTENZA INT NOT NULL
+);
+
+
+
+
+INSERT INTO automobili (VIN, MARCA, MODELLO, TARGA, PREZZO, ANNO, KILOMETRI, TIPO_CARBURANTE, PORTE, TIPO, 
+                        CLIMATIZZATORE, RUOTEMOTRICI, SCHERMO_INTEGRATO, CILINDRATA, POSTI, TIPO_CAMBIO, RAPPORTI, 
+                        POTENZAELETTRICA, TRAZIONE, PESO, COLORE, POTENZA) 
+VALUES 
+    ('1HGCM82633A123456', 'Fiat', 'Panda', 'AB123CD', 9500.00, 2018, 75000, 'Benzina', 5, 'Utilitaria', 
+     TRUE, 'Anteriore', FALSE, 1200, 5, 'Manuale', 5, 0, 'Anteriore', 980, 'Bianco', 69),
+
+    ('WVWZZZ1JZXW123457', 'Volkswagen', 'Golf', 'CD456EF', 22000.00, 2020, 45000, 'Diesel', 5, 'Berlina', 
+     TRUE, 'Anteriore', TRUE, 2000, 5, 'Automatico', 7, 0, 'Anteriore', 1350, 'Nero', 150),
+
+    ('WAUZZZ8V7KA123458', 'Audi', 'A3', 'EF789GH', 28000.00, 2021, 30000, 'Diesel', 5, 'Berlina', 
+     TRUE, 'Anteriore', TRUE, 1900, 5, 'Automatico', 7, 0, 'Anteriore', 1400, 'Grigio', 150),
+
+    ('YV1MW382162123459', 'Volvo', 'XC60', 'GH012IJ', 45000.00, 2022, 15000, 'Ibrido', 5, 'SUV', 
+     TRUE, 'Integrale', TRUE, 2000, 5, 'Automatico', 8, 87, 'Integrale', 1800, 'Blu', 250),
+
+    ('VF3WC5FS9JT123460', 'Peugeot', '208', 'IJ345KL', 18000.00, 2019, 60000, 'Benzina', 5, 'Utilitaria', 
+     TRUE, 'Anteriore', TRUE, 1200, 5, 'Manuale', 6, 0, 'Anteriore', 980, 'Rosso', 110),
+
+    ('ZFA2500000P123461', 'Fiat', '500X', 'KL678MN', 23000.00, 2021, 25000, 'Diesel', 5, 'SUV', 
+     TRUE, 'Anteriore', TRUE, 1600, 5, 'Automatico', 6, 0, 'Anteriore', 1400, 'Verde', 130),
+
+    ('SHHFK7G42HU123462', 'Honda', 'Civic', 'MN901OP', 27000.00, 2022, 20000, 'Ibrido', 5, 'Berlina', 
+     TRUE, 'Anteriore', TRUE, 1500, 5, 'Automatico', 7, 50, 'Anteriore', 1350, 'Argento', 180),
+
+    ('WDB2110561A123463', 'Mercedes', 'Classe C', 'OP234QR', 35000.00, 2020, 40000, 'Diesel', 5, 'Berlina', 
+     TRUE, 'Posteriore', TRUE, 2200, 5, 'Automatico', 9, 0, 'Posteriore', 1600, 'Nero', 194),
+
+    ('3VW217AU9FM123464', 'Tesla', 'Model 3', 'QR567ST', 48000.00, 2023, 5000, 'Elettrico', 5, 'Berlina', 
+     TRUE, 'Posteriore', TRUE, 0, 5, 'Automatico', 1, 283, 'Posteriore', 1720, 'Bianco', 283),
+
+    ('VF7NC9HZ0HY123465', 'Citroen', 'C3', 'ST890UV', 16000.00, 2018, 80000, 'Benzina', 5, 'Utilitaria', 
+     TRUE, 'Anteriore', TRUE, 1200, 5, 'Manuale', 5, 0, 'Anteriore', 1020, 'Giallo', 82);
