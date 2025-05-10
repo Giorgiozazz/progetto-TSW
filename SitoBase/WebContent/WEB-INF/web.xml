@@ -36,7 +36,7 @@
   
   <servlet>
   <servlet-name>UpdateProduct</servlet-name>
-  <servlet-class>it.unisa.servlet.UpdateCart</servlet-class>
+  <servlet-class>it.unisa.servlet.UpdateProduct</servlet-class>
 </servlet>
 
 <servlet-mapping>
