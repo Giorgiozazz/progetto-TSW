@@ -1,0 +1,865 @@
+/* Impostazioni globali */
+html, body {
+    height: 100%; /* Assicurati che il corpo della pagina abbia un'altezza del 100% */
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #000000;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column; /* Allinea gli elementi in verticale */
+}
+
+/* Contenitore principale */
+main {
+    flex-grow: 1; 
+}
+
+/* Header a tutta larghezza */
+header {
+    width: 100%;
+    background-color: #000080;
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+header h1, header a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Titolo pagina */
+h2 {
+    text-align: center;
+    color: #000080;
+}
+
+/* Link */
+a:link,
+a:visited {
+    color: #000080;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #B50C00;
+}
+
+a:active {
+    color: #545454;
+}
+
+/* Tabelle */
+table {
+    width: 100%;
+    max-width: 1000px;
+    margin: 20px auto;
+    border-collapse: collapse;
+    text-align: center;
+    font-size: 1.1em;
+    background-color: #ffffff;
+    color: #000000;
+    box-shadow: 0 0 10px #87878722;
+    border: 1px solid #878787;
+}
+
+th {
+    background-color: #000080;
+    color: #D18171;
+    padding: 12px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+td {
+    border: 1px solid #878787;
+    padding: 10px;
+}
+
+tr:nth-child(even) {
+    background-color: #f0f0f0;
+}
+
+td[colspan] {
+    font-style: italic;
+    color: #545454;
+}
+
+/* Box sizing globale per gestire padding e width */
+* {
+    box-sizing: border-box;
+}
+
+/* Label */
+label {
+    font-weight: bold;
+    color: #545454;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+/* Form */
+form {
+    width: 100%;
+    max-width: 600px;
+    margin: 30px auto;
+    text-align: left;
+    background-color: #ffffff;
+    border: 2px solid #878787;
+    padding: 20px 40px 20px 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 8px #87878722;
+}
+
+/* Input e select */
+form input[type=text],
+form input[type=number],
+form input[type=password],
+form input[type=date],
+form input[type=range],
+form input[type=email],
+form input[type=url],
+form input[type=time],
+form input[list],
+select {
+    width: 100%;
+    font-size: 1em;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #878787;
+    border-radius: 4px;
+    color: #000000;
+    background-color: #ffffff;
+}
+
+/* Textarea */
+textarea {
+    width: 100%;
+    height: 60px;
+    font-size: 1em;
+    padding: 8px;
+    border: 1px solid #878787;
+    border-radius: 4px;
+    color: #000000;
+    background-color: #ffffff;
+    margin-top: 5px;
+}
+
+/* Pulsanti */
+input[type=submit],
+input[type=reset] {
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Submit */
+input[type=submit] {
+    background-color: #000080;
+    color: #ffffff;
+}
+
+input[type=submit]:hover {
+    background-color: #545454;
+}
+
+/* Reset */
+input[type=reset] {
+    background-color: #B50C00;
+    color: #ffffff;
+}
+
+input[type=reset]:hover {
+    background-color: #D18171;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    form {
+        padding: 15px 20px;
+    }
+
+    input[type=submit],
+    input[type=reset] {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    label {
+        margin-top: 8px;
+    }
+}
+
+
+/* Link aggiuntivi */
+a {
+    color: #0044cc;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #ff6600;
+    text-decoration: none;
+}
+
+a.ordina-link {
+    color: white;
+    padding: 4px 8px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.9em;
+    background-color: #000080;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+a.ordina-link:hover {
+    background-color: #003399;
+}
+
+div.ordina-link-container {
+    text-align: center;
+}
+
+/* Tabella dettagli auto */
+.dettagli-auto {
+    width: 100%;
+    table-layout: auto;
+    border-collapse: collapse;
+    table-layout: fixed;
+    margin-bottom: 20px;
+}
+
+.dettagli-auto th,
+.dettagli-auto td {
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    text-align: center;
+    min-width: 80px;
+}
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+form.carrello-form {
+    all: unset; /* Resetta tutte le proprietÃ  eredite da 'form' */
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+form.carrello-form input[type="submit"] {
+    all: unset;
+    background-color: #000080;
+    color: white;
+    padding: 4px 10px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid #545454;
+    cursor: pointer;
+}
+form.carrello-form input[type="submit"]:hover {
+    background-color: #003399;
+}
+footer {
+    background-color: #000080;
+    color: white;
+    text-align: center;
+    padding: 30px 10px;
+    flex-shrink: 0;
+}
+footer p {
+     margin: 5px 0;
+ }
+ 
+ footer .footer-links a {
+     color: #D18171;
+     text-decoration: none;
+     margin: 0 5px;
+ }
+ 
+ footer .footer-links a:hover {
+     text-decoration: underline;
+ }
+ 
+
+a.torna-catalogo {
+    display: inline-block;
+    padding: 10px 20px; /* Imposta il padding per adattarsi alla larghezza del testo */
+    background-color: #000080; /* Colore di sfondo */
+    color: white; /* Colore del testo */
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+    white-space: nowrap; /* Impedisce che il testo venga diviso su piÃ¹ righe */
+    max-width: fit-content; /* Limita la larghezza massima alla larghezza del contenuto */
+    width: auto; /* La larghezza si adatta automaticamente al contenuto */
+}
+
+a.torna-catalogo:hover {
+    background-color: #003399;
+}
+.torna-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px; /* spazio tra i bottoni */
+    margin-top: 30px;
+}
+.carrello-messaggio {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.carrello-messaggio.successo {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.carrello-messaggio.avviso {
+    background-color: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeeba;
+}
+.image-container {
+    width: 160px;
+    height: 120px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+/* Contenitore per il link di registrazione */
+.registrazione-container {
+    text-align: center;  /* Centra il contenuto al centro */
+    margin-top: 20px;     /* Distanza superiore per un po' di spazio */
+}
+
+/* Link di registrazione */
+a.registrazione-link {
+    padding: 8px 16px;
+    background-color: #000080; /* Colore di sfondo blu scuro */
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 5px;
+    display: inline-block;  /* Assicura che il link venga trattato come un blocco inline */
+    margin-top: 15px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Effetto hover */
+a.registrazione-link:hover {
+    background-color: #003399; /* Colore di sfondo piÃ¹ scuro */
+    transform: scale(1.05);  /* Effetto di ingrandimento */
+}
+
+/* Effetto attivo */
+a.registrazione-link:active {
+    background-color: #B50C00; /* Colore per feedback di clic */
+}
+.error-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 30px;
+    background-color: #f8d7da; /* Colore di sfondo per l'errore */
+    border: 1px solid #f5c6cb;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 400px;
+    font-family: Arial, sans-serif;
+}
+
+.error-box h2 {
+    color: #721c24;
+    margin-bottom: 15px;
+}
+
+.error-box p {
+    color: #721c24;
+    margin: 10px 0;
+}
+
+.error-box .btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #f5c6cb;
+    color: #721c24;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.error-box .btn:hover {
+    background-color: #f1b0b7;
+}
+/* Form di modifica profilo utente */
+.form-profilo {
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+form.form-profilo {
+    background: none;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    width: auto;
+}
+
+
+.form-profilo table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.form-profilo th,
+.form-profilo td {
+    padding: 10px 15px;
+    text-align: left;
+}
+
+.form-profilo input[type="text"],
+.form-profilo input[type="email"] {
+    width: 95%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.form-profilo button.torna-catalogo {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.form-profilo button.torna-catalogo:hover {
+    background-color: #45a049;
+}
+.form-profilo a.torna-catalogo {
+    display: block;
+    text-align: center;
+    background-color: #4CAF50; /* verde come il bottone */
+    color: white; /* testo bianco */
+    padding: 10px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: background-color 0.3s ease;
+}
+
+.form-profilo a.torna-catalogo:hover {
+    background-color: #45a049; /* verde piÃ¹ scuro in hover */
+}
+.product-image {
+    width: 100%;  /* L'immagine occupa tutta la larghezza disponibile */
+    max-width: 600px;  /* Imposta una larghezza massima di 600px */
+    height: auto;  /* Mantiene l'altezza proporzionale */
+    margin: 20px auto;  /* Allinea al centro con margini sopra e sotto */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.product-image img {
+    width: 100% !important;  /* Forza la larghezza al 100% */
+    max-width: 800px !important;  /* Imposta una larghezza massima piÃ¹ grande */
+    height: auto !important;  /* Mantieni l'altezza proporzionale */
+    max-height: 500px !important;  /* Imposta un'altezza massima per evitare che l'immagine diventi troppo alta */
+    object-fit: contain !important;  /* Mantieni le proporzioni senza distorcere l'immagine */
+}
+.about-us {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    line-height: 1.6;
+}
+.paragrafo-giustificato {
+  text-align: justify;
+}
+.creatore-foto {
+    width: 300px;
+    max-width: 200px;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+}
+/* CSS per il form semplice */
+.form-simple {
+    width: 100%;
+    max-width: 100%; /* Puoi regolare la larghezza massima del form */
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff; /* Sfondo bianco per il form */
+    border: 1px solid #ccc; /* Bordo semplice */
+    border-radius: 0; /* Nessun angolo arrotondato */
+    box-shadow: none; /* Nessuna ombra */
+}
+/* Tabella dentro il form semplice */
+.form-simple .dettagli-auto {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 1.1em; /* Un leggero aumento della dimensione del font per una migliore leggibilitÃ  */
+    text-align: center;
+    background-color: #ffffff;
+    color: #000000;
+    box-shadow: 0 0 10px #87878722;
+    border: 1px solid #878787;
+}
+
+/* Stile per le intestazioni della tabella */
+.form-simple .dettagli-auto th {
+    background-color: #000080; /* Colore di sfondo blu scuro per l'intestazione */
+    color: #D18171; /* Colore del testo nelle intestazioni */
+    padding: 12px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* Stile per le celle della tabella */
+.form-simple .dettagli-auto td {
+    border: 1px solid #878787;
+    padding: 10px;
+    word-wrap: break-word; /* Permette di andare a capo per i testi lunghi */
+}
+
+/* Righe pari con sfondo alternato */
+.form-simple .dettagli-auto tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Immagini nella tabella */
+.form-simple .dettagli-auto td img {
+    max-width: 100%;  /* Impostazione larghezza immagine */
+    max-height: 100%;  /* Impostazione altezza immagine */
+    object-fit: contain; /* Mantieni le proporzioni */
+    border-radius: 5px;
+}
+
+/* Colonna prezzo e quantitÃ  centrata */
+.form-simple .dettagli-auto td:nth-child(5), .form-simple .dettagli-auto td:nth-child(6) {
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Pulsante Rimuovi */
+.form-simple .dettagli-auto .remove-button {
+    background-color: #d9534f;
+    color: white;
+    padding: 5px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+}
+
+.form-simple .dettagli-auto .remove-button:hover {
+    background-color: #c9302c; /* Colore piÃ¹ scuro al passaggio del mouse */
+}
+
+.form-profilo-fix {
+    width: 80%;
+    margin: 40px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.form-profilo-fix table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.form-profilo-fix th,
+.form-profilo-fix td {
+    text-align: left;
+    padding: 12px 10px;
+    vertical-align: top;
+}
+
+.form-profilo-fix input[type="text"],
+.form-profilo-fix input[type="number"],
+.form-profilo-fix input[type="file"],
+.form-profilo-fix textarea,
+.form-profilo-fix select {
+    width: 100%;
+    box-sizing: border-box; 
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.form-profilo-fix textarea {
+    resize: vertical;
+    min-height: 100px;
+    max-width: 100%; 
+    overflow: auto;
+}
+
+.form-profilo-fix button,
+.form-profilo-fix .torna-catalogo {
+    background-color: #c9302c;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.form-profilo-fix button:hover,
+.form-profilo-fix .torna-catalogo:hover {
+    background-color: #c9302c;
+}
+.form-profilo-fix button,
+.form-profilo-fix .torna-catalogo {
+    display: block;        /* cambia da inline-block a block */
+    margin: 10px auto;     /* margine verticale + centramento orizzontale */
+}
+
+@media screen and (max-width: 900px) {
+    table.dettagli-auto {
+        width: 100%;
+        border-collapse: separate; /* evita problemi con il block display */
+        border-spacing: 0 1rem; /* margine tra righe */
+    }
+
+    /* Nascondi thead */
+    table.dettagli-auto thead {
+        display: none;
+    }
+
+    /* Trasforma le righe in blocchi */
+    table.dettagli-auto tr {
+        display: block;
+        margin-bottom: 1rem;
+        border: 1px solid #ccc;
+        padding: 0.5rem;
+        background-color: #fff;
+        box-shadow: 0 0 5px #ddd;
+    }
+
+    /* Trasforma le celle in blocchi, ognuna con label */
+    table.dettagli-auto td {
+        display: block;
+        text-align: center;
+        padding: 0.5rem 0;
+        position: relative;
+        border: none;
+        border-bottom: 1px solid #eee;
+        white-space: normal; /* per andare a capo */
+    }
+
+    table.dettagli-auto td:last-child {
+        border-bottom: none;
+    }
+
+    /* Etichetta prima di ogni cella (prendi il valore da data-label) */
+    table.dettagli-auto td::before {
+        content: attr(data-label);
+        display: block;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: 0.3rem;
+        color: #333;
+    }
+
+    /* Adatta immagini */
+    table.dettagli-auto img {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+        margin-top: 0.5rem;
+    }
+    .col-foto {
+        display: none;
+    }
+}
+/* Smartphone grandi (max 600px) */
+@media screen and (max-width: 600px) {
+    table.dettagli-auto td {
+        padding: 0.3rem;
+        font-size: 14px; /* testo piÃ¹ piccolo */
+    }
+
+    table.dettagli-auto img {
+        max-width: 150px;
+        width: 100%;
+        height: auto;
+    }
+
+    input[type="submit"] {
+        font-size: 14px;
+        padding: 6px 10px;
+    }
+    
+}
+
+/* Smartphone piccoli (max 480px) */
+@media screen and (max-width: 480px) {
+    table.dettagli-auto td {
+        padding: 0.2rem;
+        font-size: 12px; /* testo ancora piÃ¹ piccolo */
+    }
+
+    table.dettagli-auto img {
+        max-width: 100px;
+        width: 100%;
+        height: auto;
+    }
+
+    input[type="submit"] {
+        font-size: 12px;
+        padding: 4px 8px;
+    }
+}
+.menu-list {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+#menu-toggle {
+  display: none; /* Nascondi il bottone hamburger di default */
+}
+@media screen and (max-width: 900px) {
+  #menu-toggle {
+    display: block;
+    margin-left: auto;  
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 28px;
+    cursor: pointer;
+    padding: 0.5rem;
+  }
+
+  #menu-toggle:hover {
+    color: #ff9800;
+  }
+  
+  .menu-list {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #007fff;  /* â†� qui imposti il colore di sfondo */
+    transition: background-color 0.3s ease;
+    position: absolute;
+    top: 60px;
+    right: 15px;
+    width: 200px;
+    padding: 10px;
+    border-radius: 4px;
+    z-index: 1000;
+  }
+
+  .menu-list.show {
+    display: flex;
+  }
+
+  .menu-list li a {
+    color: white;
+    padding: 8px;
+    display: block;
+    text-decoration: none;
+  }
+	.menu-list li a:hover {
+	background-color: #003399;   /* sfondo arancione al passaggio */
+	color: white;                /* cambia il colore del testo */
+	border-radius: 4px;          /* angoli arrotondati */
+	transition: background-color 0.3s ease, color 0.3s ease;
+  }
+}
+
+#search-bar {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px 5px 0 0;
+    outline: none;
+}
+
+#suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-top: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    max-height: 200px;
+    overflow-y: auto;
+    border-radius: 0 0 5px 5px;
+}
+
+.suggestion-item {
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #000080;
+}
+
+.suggestion-item:hover {
+    background-color: #f0f0f0;
+    color: #B50C00;
+}
