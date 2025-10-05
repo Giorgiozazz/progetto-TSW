@@ -1,0 +1,5 @@
+eclipse.preferences.version=1
+encoding//WebContent/css/ProductStyle.css=UTF-8
+encoding//WebContent/jsp/utente/registrazione.jsp=UTF-8
+encoding//src/it/unisa/control/ConfermaOrdineServlet.java=UTF-8
+encoding//src/it/unisa/utils/EmailUtils.java=UTF-8
